@@ -9,17 +9,10 @@ class Yor < Formula
 
   def install
     ENV["GOPATH"] = buildpath
-
-    bin_path = buildpath/"src/github.com/bridgecrewio/yor"
-    # Copy all files from their current location (GOPATH root)
-    bin_path.install Dir["*"]
-
-    # Stage dependencies. This requires the "require language/go" line above
-    Language::Go.stage_deps resources, buildpath/"src"
-    cd bin_path do
-        # Install the compiled binary into Homebrew's `bin` - a pre-existing
-        # global variable
-        system "go", "build", "-o", bin/"yor", "."
+    path = buildpath/"src/github.com/bridgecrewio/yor"
+    path.install Dir["*"]
+    cd path do
+      system "go", "build", "-o", "#{bin}/yor"
     end
   end
 
