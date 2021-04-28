@@ -8,12 +8,7 @@ class Yor < Formula
   depends_on "go" => :build
 
   def install
-    ENV["GOPATH"] = buildpath
-    path = buildpath/"src/github.com/bridgecrewio/yor"
-    path.install Dir["*"]
-    cd path do
-      system "go", "build", "-o", "#{bin}/yor"
-    end
+    system "go", "build", *std_go_args, "-ldflags", "-s -w"
   end
 
   test do
