@@ -1,7 +1,7 @@
 class Yor < Formula
   desc "Extensible auto-tagger for your IaC files"
   homepage "https://www.bridgecrew.io"
-  url "https://github.com/bridgecrewio/yor.git", tag: "0.1.77", revision: "297da389ad7e50eda944eadbcd412e0c7319c6f6"
+  url "https://github.com/bridgecrewio/yor.git", tag: "0.1.78", revision: "334d2c61983ff3c5f74ee1a87c69f5659da104d4"
   sha256 "5c3e44b89ced43365bb91405001fbb7eef5b48b0cea61ace68b6a44efbbb2b8e"
   license "Apache-2.0"
 
