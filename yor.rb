@@ -1,14 +1,13 @@
 class Yor < Formula
   desc "Extensible auto-tagger for your IaC files"
   homepage "https://www.bridgecrew.io"
-  url "https://github.com/bridgecrewio/yor.git", tag: "0.1.84", revision: "c1c3c20e810a850863f524fa183c44a109b8815b"
-  sha256 "5c3e44b89ced43365bb91405001fbb7eef5b48b0cea61ace68b6a44efbbb2b8e"
+  version "0.1.84"
+  url "https://github.com/bridgecrewio/yor/releases/download/" + version + "/yor-" + version + "-darwin-amd64.tar.gz"
+  sha256 "214078db6f69eeade5552d21a35c66b66843c7849ccb3d91e15dcc1755a69e3b"
   license "Apache-2.0"
 
-  depends_on "go" => :build
-
   def install
-    system "go", "build", *std_go_args, "-ldflags", "-s -w"
+    bin.install "yor"
   end
 
   test do
