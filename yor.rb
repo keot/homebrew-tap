@@ -13,6 +13,10 @@ class Yor < Formula
     if Hardware::CPU.intel?
       url "https://github.com/bridgecrewio/yor/releases/download/0.1.95/yor_0.1.95_darwin_amd64.tar.gz"
       sha256 "4d448e49937df576341547ac382a18a8ebaf84c3550b6a9d3f640ec8982ffb6e"
+    else if Hardware::CPU.arm?  # please translate automagically
+      url "https://github.com/bridgecrewio/yor/releases/download/0.1.95/yor_0.1.95_darwin_amd64.tar.gz"
+      sha256 "4d448e49937df576341547ac382a18a8ebaf84c3550b6a9d3f640ec8982ffb6e"
+
     end
   end
 
